@@ -13,10 +13,10 @@ $grey: #07393c;
 }
 body {
   font-family: "Poppins", sans-serif;
-
-  // overflow: hidden;
+  background-color: $orange;
   color: $black;
   font-size: 24px;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -43,7 +43,7 @@ header {
     nav ul {
       display: flex;
       li {
-        padding: 0px 15px;
+        padding-left: 15px;
         a {
           font-size: 18px;
           color: $black;
@@ -56,7 +56,6 @@ header {
 }
 
 .hero {
-  background-color: $orange;
   .hero-content {
     font-family: "Roboto", sans-serif;
     text-align: center;
@@ -81,20 +80,19 @@ header {
   }
   .hero-image {
     position: relative;
+    z-index: 1;
     margin: 0 auto;
     margin-top: 50px;
     width: 300px;
     height: 300px;
     img {
-      position: relative;
-      z-index: 1;
       width: 100%;
-    }
-    &::before {
-      content: "";
-      display: block;
       position: absolute;
-      z-index: 0;
+      top: 0;
+    }
+    .hero-image-bg {
+      position: relative;
+      z-index: -1;
       width: 100%;
       height: 100%;
       transform: rotate(-5.47deg);
@@ -115,5 +113,50 @@ header {
     img {
       width: 100%;
     }
+  }
+}
+
+@media (min-width: 769px) {
+  .wrapper {
+    padding: 0px 60px;
+  }
+  header {
+    .header-wrapper {
+      max-height: 70px;
+      .logo {
+        font-size: 64px;
+      }
+      nav ul li {
+        padding-left: 30px;
+      }
+    }
+  }
+  .hero {
+    .hero-body {
+      height: 300px;
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .hero-content {
+        padding: 0px;
+        max-width: 400px;
+        text-align: left;
+      }
+      .hero-image {
+        margin: 0;
+      }
+    }
+    .hero-links {
+      max-width: 450px;
+      margin: 0;
+      padding: 65px 0 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 0px 120px;
   }
 }

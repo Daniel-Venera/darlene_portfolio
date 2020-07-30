@@ -8,8 +8,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #f5a05c;
   color: #021718;
   font-size: 24px;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -53,7 +55,7 @@ header .header-wrapper nav ul {
 }
 
 header .header-wrapper nav ul li {
-  padding: 0px 15px;
+  padding-left: 15px;
 }
 
 header .header-wrapper nav ul li a {
@@ -61,10 +63,6 @@ header .header-wrapper nav ul li a {
   color: #021718;
   text-decoration: none;
   text-transform: lowercase;
-}
-
-.hero {
-  background-color: #f5a05c;
 }
 
 .hero .hero-content {
@@ -95,6 +93,7 @@ header .header-wrapper nav ul li a {
 
 .hero .hero-image {
   position: relative;
+  z-index: 1;
   margin: 0 auto;
   margin-top: 50px;
   width: 300px;
@@ -102,16 +101,14 @@ header .header-wrapper nav ul li a {
 }
 
 .hero .hero-image img {
-  position: relative;
-  z-index: 1;
   width: 100%;
+  position: absolute;
+  top: 0;
 }
 
-.hero .hero-image::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 0;
+.hero .hero-image .hero-image-bg {
+  position: relative;
+  z-index: -1;
   width: 100%;
   height: 100%;
   -webkit-transform: rotate(-5.47deg);
@@ -143,5 +140,52 @@ header .header-wrapper nav ul li a {
 
 .hero .hero-links img {
   width: 100%;
+}
+
+@media (min-width: 769px) {
+  .wrapper {
+    padding: 0px 60px;
+  }
+  header .header-wrapper {
+    max-height: 70px;
+  }
+  header .header-wrapper .logo {
+    font-size: 64px;
+  }
+  header .header-wrapper nav ul li {
+    padding-left: 30px;
+  }
+  .hero .hero-body {
+    height: 300px;
+    margin-top: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .hero .hero-body .hero-content {
+    padding: 0px;
+    max-width: 400px;
+    text-align: left;
+  }
+  .hero .hero-body .hero-image {
+    margin: 0;
+  }
+  .hero .hero-links {
+    max-width: 450px;
+    margin: 0;
+    padding: 65px 0 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 0px 120px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
